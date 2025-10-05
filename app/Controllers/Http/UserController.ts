@@ -5,6 +5,7 @@ import Logger from '@ioc:Adonis/Core/Logger'
 import UserValidator from 'App/Validators/UserValidator'
 import PermissionValidator from 'App/Validators/PermissionValidator'
 
+
 export default class UsersController {
   // get users
   public async index({ auth, response }: HttpContextContract) {

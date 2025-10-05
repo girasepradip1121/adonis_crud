@@ -20,17 +20,17 @@
 
 import Route from "@ioc:Adonis/Core/Route";
 
-Route.post("/register", "AuthController.register");
+Route.post("/register", "AuthController.signup");
 Route.post("/login", "AuthController.login");
 Route.post("/logout", "AuthController.logout").middleware(["auth"]);
 
 Route.get("/me", "AuthController.me").middleware(["auth"]);
 
-Route.get("/users", "UsersController.index").middleware(["auth"]);
-Route.post("/users", "UsersController.store").middleware(["auth"]);
-Route.get("/users/:id", "UsersController.show").middleware(["auth"]);
-Route.put("/users/:id", "UsersController.update").middleware(["auth"]);
-Route.delete("/users/:id", "UsersController.destroy").middleware(["auth"]);
+Route.get("/users", "UserController.index").middleware(["auth"]);
+Route.post("/users", "UserController.store").middleware(["auth"]);
+Route.get("/users/:id", "UserController.show").middleware(["auth"]);
+Route.put("/users/:id", "UserController.update").middleware(["auth"]);
+Route.delete("/users/:id", "UserController.destroy").middleware(["auth"]);
 
 Route.patch(
   "/users/:id/permission",
